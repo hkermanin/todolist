@@ -4,9 +4,9 @@ import { TaskContextProvider } from "./context/taskContext";
 function App() {
   return (
     <TaskContextProvider>
-    <div className="h-screen bg-gray-200 flex justify-center items-center">
-      <Todo />
-    </div>
+      <div className="h-screen bg-gray-200 flex justify-center items-center">
+        <Todo />
+      </div>
     </TaskContextProvider>
   );
 }

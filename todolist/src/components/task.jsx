@@ -1,11 +1,9 @@
-import { useRef , useContext} from "react";
+import { useRef, useContext } from "react";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 import { TaskContext } from "../context/taskContext";
 
-export default function Task({ task}) {
-
-  const {toggleTaskState,deleteTask,editTask} = useContext(TaskContext);
-  
+export default function Task({ task }) {
+  const { toggleTaskState, deleteTask, editTask } = useContext(TaskContext);
 
   const editRef = useRef(null);
   useOnClickOutside(editRef, () => {
@@ -38,7 +36,6 @@ export default function Task({ task}) {
             type="text"
             defaultValue={task.title}
           />
-          
         ) : (
           <span className={`${task.state ? "line-through" : ""}`}>
             {task.title}
@@ -48,9 +45,8 @@ export default function Task({ task}) {
 
       <div className="flex items-center gap-0.5">
         <div
-          
           onClick={() => {
-            editTask(task.id,'');
+            editTask(task.id, "");
           }}
           className="text-blue-700 cursor-pointer"
         >
