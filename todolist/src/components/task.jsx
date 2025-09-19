@@ -1,7 +1,11 @@
-import { useRef } from "react";
+import { useRef , useContext} from "react";
 import useOnClickOutside from "../hooks/useOnClickOutside";
+import { TaskContext } from "../context/taskContext";
 
-export default function Task({ task, toggleTaskState, deleteTask, editTask }) {
+export default function Task({ task}) {
+
+  const {toggleTaskState,deleteTask,editTask} = useContext(TaskContext);
+  
 
   const editRef = useRef(null);
   useOnClickOutside(editRef, () => {
